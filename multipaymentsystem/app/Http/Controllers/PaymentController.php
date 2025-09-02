@@ -33,6 +33,7 @@ class PaymentController extends Controller
         $amount = $request->amount;
 
         $returnUrl = route('payment.verify', ['gateway' => $method]);
+        
         $orderData = ['amount' => $amount, 'return_url' => $returnUrl];
 
         // In real app: Create order, generate ref, store ref with amount, pass ref in orderData
